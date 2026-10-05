@@ -2,25 +2,132 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f172a;
+
+  /* SL International Brand Colors */
+  --primary: #1247b8;
+  --primary-dark: #092e78;
+  --secondary: #16a9e8;
+  --accent: #f59e0b;
+
+  --section-background: #f5f9ff;
+  --card-background: #ffffff;
+  --border: #e2e8f0;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+
+  --color-section: var(--section-background);
+  --color-card: var(--card-background);
+  --color-border: var(--border);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* --------------------------------
+   Base
+--------------------------------- */
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* --------------------------------
+   Interactive Elements
+--------------------------------- */
+
+/* Make buttons and clickable controls use pointer cursor */
+button,
+[type="button"],
+[type="submit"],
+[type="reset"],
+a,
+select,
+summary,
+[role="button"] {
+  cursor: pointer;
+}
+
+/* Disabled controls should not appear clickable */
+button:disabled,
+[type="button"]:disabled,
+[type="submit"]:disabled,
+[type="reset"]:disabled,
+select:disabled,
+[aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
+/* --------------------------------
+   Selection
+--------------------------------- */
+
+::selection {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+/* --------------------------------
+   Scrollbar
+--------------------------------- */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* --------------------------------
+   Images
+--------------------------------- */
+
+img {
+  max-width: 100%;
+}
+
+/* --------------------------------
+   Focus Accessibility
+--------------------------------- */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
 }
