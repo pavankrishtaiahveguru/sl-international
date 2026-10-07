@@ -31,7 +31,7 @@ export const metadata = {
   ],
   authors: [{ name: "SL International" }],
   creator: "SL International",
-  metadataBase: new URL("https://www.example.com"),
+  metadataBase: new URL("https://www.sl-international.com"),
   openGraph: {
     title: "SL International | Overseas Manpower Consultants",
     description:

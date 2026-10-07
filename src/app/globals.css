@@ -131,3 +131,37 @@ select:focus-visible {
   outline: 2px solid var(--secondary);
   outline-offset: 3px;
 }
+
+/* --------------------------------
+   International Destinations Marquee
+--------------------------------- */
+
+/*
+  The track holds the destination list twice and is translated by
+  exactly -50% of its own width, so the loop point lands exactly where
+  the first copy ends — no jump, no blank gap. Card spacing uses
+  uniform per-card padding (not a track gap) to keep that math exact.
+*/
+.marquee-track {
+  animation: marquee 28s linear infinite;
+}
+
+.marquee-viewport:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}

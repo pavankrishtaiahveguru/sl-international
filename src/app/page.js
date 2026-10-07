@@ -1,8 +1,8 @@
 import CompanyIntro from "@/components/home/CompanyIntro";
+import ClientMarquee from "@/components/home/ClientMarquee";
 import FinalCTA from "@/components/home/FinalCTA";
 import Hero from "@/components/home/Hero";
 import Process from "@/components/home/Process";
-import Services from "@/components/home/Services";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import React from "react";
 
@@ -11,7 +11,7 @@ const page = () => {
     <>
       <Hero />
       <CompanyIntro />
-      <Services />
+      <ClientMarquee />
       <WhyChooseUs />
       <Process />
       <FinalCTA />

@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -29,29 +29,29 @@ const fadeUp = {
 
 const supportPoints = [
   "Skilled, semi-skilled and unskilled recruitment",
-  "Visa and documentation assistance",
-  "Travel, medical and insurance support",
-  "Post-departure guidance",
+  "Structured recruitment and documentation assistance",
+  "Visa, travel, medical and insurance support",
+  "Guidance throughout the overseas employment journey",
 ];
 
 const benefits = [
   {
-    icon: Globe2,
-    title: "Global Opportunities",
-    description:
-      "Connecting candidates with international employment opportunities across different skill categories.",
-  },
-  {
     icon: UsersRound,
-    title: "Candidate Support",
+    title: "Professional Recruitment",
     description:
-      "Guidance throughout recruitment, documentation, travel preparation and post-departure stages.",
+      "Focused on understanding employer requirements and identifying suitable candidates across different skill categories.",
   },
   {
-    icon: ShieldCheck,
-    title: "Transparent Process",
+    icon: FileCheck2,
+    title: "Structured Support",
     description:
-      "Clear communication and structured assistance throughout the recruitment journey.",
+      "Clear assistance across recruitment, documentation, travel preparation and other important stages.",
+  },
+  {
+    icon: Globe2,
+    title: "International Opportunities",
+    description:
+      "Supporting candidates as they explore employment opportunities beyond their local market.",
   },
 ];
 
@@ -63,7 +63,7 @@ export default function CompanyIntro() {
     >
       {/* =========================================================
           BACKGROUND DECORATION
-      ========================================================= */}
+      ========================================================== */}
 
       <div
         aria-hidden="true"
@@ -78,7 +78,7 @@ export default function CompanyIntro() {
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         {/* =======================================================
             SECTION HEADER
-        ======================================================= */}
+        ======================================================== */}
 
         <motion.div
           variants={fadeUp}
@@ -99,26 +99,26 @@ export default function CompanyIntro() {
           </div>
 
           <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-[#071B49] sm:text-4xl lg:text-5xl">
-            Connecting Talent With{" "}
-            <span className="text-[#1247B8]">Opportunities Worldwide</span>
+            Connecting the Right People With{" "}
+            <span className="text-[#1247B8]">the Right Opportunities</span>
           </h2>
 
           <p className="mt-5 max-w-2xl text-base leading-7 text-[#64748B] sm:text-lg">
-            SL International is an overseas manpower consultancy helping
-            skilled, semi-skilled and unskilled professionals explore
-            international employment opportunities through a structured
-            recruitment and support process.
+            SL International is an overseas manpower consultancy committed to
+            connecting qualified professionals with international employment
+            opportunities through a structured and professional recruitment
+            process.
           </p>
         </motion.div>
 
         {/* =======================================================
             MAIN CONTENT
-        ======================================================= */}
+        ======================================================== */}
 
         <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           {/* =====================================================
               LEFT — IMAGE
-          ===================================================== */}
+          ====================================================== */}
 
           <motion.div
             variants={fadeUp}
@@ -130,21 +130,24 @@ export default function CompanyIntro() {
             }}
             className="relative"
           >
-            {/* Main image */}
+            {/* Main Image */}
+
             <div className="relative overflow-hidden rounded-[2rem] bg-[#EAF4FF] p-2 sm:p-3">
               <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem]">
                 <Image
                   src="/images/home/about.png"
-                  alt="SL International overseas manpower consultancy"
+                  alt="SL International overseas manpower recruitment and professional support"
                   fill
                   sizes="(max-width: 1024px) 100vw, 45vw"
                   className="object-cover transition-transform duration-700 hover:scale-[1.03]"
                 />
 
-                {/* Image gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#071B49]/70 via-transparent to-transparent" />
+                {/* Image Gradient */}
 
-                {/* Image content */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071B49]/75 via-[#071B49]/10 to-transparent" />
+
+                {/* Image Content */}
+
                 <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-7">
                   <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#7DD3FC]">
                     SL International
@@ -153,7 +156,7 @@ export default function CompanyIntro() {
                   <h3 className="mt-1 text-2xl font-bold leading-tight text-white sm:text-3xl">
                     Building Careers.
                     <br />
-                    Changing Lives.
+                    Supporting New Possibilities.
                   </h3>
                 </div>
               </div>
@@ -188,7 +191,7 @@ export default function CompanyIntro() {
 
           {/* =====================================================
               RIGHT — CONTENT
-          ===================================================== */}
+          ====================================================== */}
 
           <motion.div
             variants={fadeUp}
@@ -204,20 +207,23 @@ export default function CompanyIntro() {
             </span>
 
             <h3 className="mt-3 text-3xl font-extrabold leading-tight text-[#071B49] sm:text-4xl">
-              Support Beyond Recruitment
+              The Right People for the{" "}
+              <span className="text-[#1247B8]">Right Opportunities</span>
             </h3>
 
             <p className="mt-5 text-base leading-7 text-[#475569]">
-              Finding an international employment opportunity involves more than
-              recruitment alone. Candidates may need assistance with
-              documentation, visa procedures, medical requirements, travel
-              arrangements and preparation before departure.
+              SL International focuses on understanding the requirements of
+              employers and the aspirations of candidates. Our approach is
+              centered on identifying suitable talent across different skill
+              categories while maintaining a clear and professional recruitment
+              process.
             </p>
 
             <p className="mt-4 text-base leading-7 text-[#475569]">
-              SL International provides support across these stages, helping
-              candidates understand the process and move forward with greater
-              clarity and confidence.
+              We support candidates through important stages of the overseas
+              employment journey, helping them move forward with greater clarity
+              and confidence from recruitment and documentation to travel
+              preparation and post-departure guidance.
             </p>
 
             {/* =================================================
@@ -244,10 +250,10 @@ export default function CompanyIntro() {
 
             <div className="mt-8">
               <Link
-                href="/services"
+                href="/about"
                 className="group inline-flex items-center gap-2 rounded-full bg-[#1247B8] px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#1247B8]/15 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#092E78]"
               >
-                Discover Our Services
+                Learn More About Us
                 <ArrowRight
                   size={17}
                   className="transition-transform duration-300 group-hover:translate-x-1"
@@ -259,7 +265,7 @@ export default function CompanyIntro() {
 
         {/* =======================================================
             BENEFITS
-        ======================================================= */}
+        ======================================================== */}
 
         <motion.div
           variants={fadeUp}
