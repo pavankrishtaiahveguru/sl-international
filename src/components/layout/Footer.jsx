@@ -144,7 +144,7 @@ export default function Footer() {
                   <span className="block text-xs text-slate-400">Call Us</span>
 
                   <span className="mt-1 block text-sm font-medium text-slate-200 group-hover:text-white">
-                    +91 08725 - 236116, 236117
+                    +91 87252 36116
                   </span>
                 </span>
               </a>

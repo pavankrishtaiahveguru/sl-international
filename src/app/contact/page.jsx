@@ -3,16 +3,15 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import {
-  ArrowRight,
   CheckCircle2,
   ChevronDown,
   Clock3,
   Mail,
   MapPin,
-  MessageCircle,
   Phone,
   Send,
 } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import PhoneInput, {
   getCountryCallingCode,
   isValidPhoneNumber,
@@ -424,7 +423,7 @@ export default function ContactPage() {
                   className="group flex gap-4 rounded-2xl border border-slate-200 bg-white p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-[0_15px_40px_rgba(18,71,184,0.08)]"
                 >
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#1247B8] transition-colors duration-300 group-hover:bg-[#1247B8] group-hover:text-white">
-                    <MessageCircle size={21} />
+                    <FaWhatsapp size={21} />
                   </div>
 
                   <div>
