@@ -43,7 +43,7 @@ const fadeUp = {
 
 export default function Hero() {
   return (
-    <section className="relative isolate min-h-[680px] overflow-hidden bg-[#F7FBFF] sm:min-h-[700px] md:min-h-[620px] lg:min-h-[500px] xl:min-h-[540px]">
+    <section className="relative isolate overflow-hidden bg-[#F7FBFF]">
       {/* Background Image */}
       <div className="absolute inset-0 -z-20">
         <Image
@@ -52,18 +52,18 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[72%_center]"
+          className="scale-[1.04] object-cover object-[72%_center] sm:object-[68%_center] lg:object-[72%_center]"
         />
       </div>
 
       {/* Desktop readability overlay */}
-      <div className="pointer-events-none absolute inset-0 -z-10 hidden bg-linear-to-r from-white/90 via-white/35 to-transparent lg:block" />
+      <div className="pointer-events-none absolute inset-0 -z-10 hidden bg-linear-to-r from-white/92 via-white/72 to-white/30 lg:block" />
 
       {/* Mobile / Tablet readability overlay */}
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-linear-to-b from-white/95 via-white/65 to-transparent lg:hidden" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-linear-to-b from-white/96 via-white/70 to-white/20 lg:hidden" />
 
       {/* Main Content */}
-      <div className="relative mx-auto flex min-h-[680px] max-w-7xl items-center px-5 py-12 sm:min-h-[700px] sm:px-8 sm:py-14 md:min-h-[620px] md:px-10 lg:min-h-[500px] lg:py-16 xl:min-h-[540px]">
+      <div className="relative mx-auto flex min-h-[620px] w-full max-w-[1800px] items-center px-4 pb-12 pt-12 sm:min-h-[680px] sm:px-6 sm:pb-14 sm:pt-14 lg:min-h-[620px] lg:px-8 xl:min-h-[660px] xl:px-12">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -75,7 +75,7 @@ export default function Hero() {
               },
             },
           }}
-          className="relative z-10 w-full lg:w-[54%]"
+          className="relative z-10 w-full max-w-[620px] lg:max-w-[560px]"
         >
           {/* Company Name */}
           <motion.div variants={fadeUp} className="flex items-center gap-2">
@@ -97,7 +97,7 @@ export default function Hero() {
           {/* Heading */}
           <motion.h1
             variants={fadeUp}
-            className="mt-5 max-w-[620px] text-[38px] font-extrabold leading-[1.06] tracking-[-0.035em] text-[#071B49] sm:text-[46px] md:text-[50px] lg:text-[52px] xl:text-[62px]"
+            className="mt-5 text-[clamp(2.25rem,5vw,4.25rem)] font-extrabold leading-[0.98] tracking-[-0.04em] text-[#071B49] xl:text-[4.2rem]"
           >
             Your Trusted Partner
             <br className="hidden sm:block" /> in{" "}
@@ -107,7 +107,7 @@ export default function Hero() {
           {/* Description */}
           <motion.p
             variants={fadeUp}
-            className="mt-5 max-w-[560px] text-sm leading-6 text-[#475569] sm:text-[15px] sm:leading-7 lg:text-[15px]"
+            className="mt-5 max-w-[540px] text-sm leading-6 text-[#475569] sm:text-[15px] sm:leading-7 lg:text-[15px]"
           >
             Connecting the right talent with the right opportunities worldwide.
             Building careers and supporting professionals throughout their

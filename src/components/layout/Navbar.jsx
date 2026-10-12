@@ -65,12 +65,11 @@ export default function Navbar() {
       >
         <div
           className="
-            flex h-[78px] w-full items-center justify-between
-            px-5
+            mx-auto flex h-[78px] w-full max-w-[1800px] items-center gap-4
+            px-4
             sm:px-6
-            lg:pl-[clamp(5rem,11vw,11.25rem)]
-            lg:pr-10
-            xl:pl-[clamp(6rem,11vw,11.25rem)]
+            lg:px-8
+            xl:px-12
           "
         >
           {/* =====================================================
@@ -79,7 +78,7 @@ export default function Navbar() {
           <Link
             href="/"
             aria-label="SL International Home"
-            className="relative z-50 flex shrink-0 items-center gap-3"
+            className="relative z-50 flex min-w-0 shrink items-center gap-3"
           >
             {/* Logo */}
             <div
@@ -103,7 +102,7 @@ export default function Navbar() {
             </div>
 
             {/* Brand Text */}
-            <div className="flex flex-col leading-none">
+            <div className="flex min-w-0 flex-col leading-none">
               {/* Company Name */}
               <div className="relative inline-block self-start">
                 <p
@@ -157,7 +156,7 @@ export default function Navbar() {
           {/* =====================================================
               DESKTOP NAVIGATION
           ====================================================== */}
-          <nav className="hidden items-center gap-1 lg:flex">
+          <nav className="hidden flex-1 items-center justify-center gap-1 lg:flex">
             {navLinks.map((link) => {
               const active = isActive(link.href);
 
@@ -189,7 +188,7 @@ export default function Navbar() {
           {/* =====================================================
               DESKTOP CTA
           ====================================================== */}
-          <div className="hidden lg:flex">
+          <div className="hidden shrink-0 lg:flex">
             <Link
               href="/contact"
               className="
@@ -237,6 +236,7 @@ export default function Navbar() {
             className="
               relative
               z-50
+              ml-auto
               flex
               h-11
               w-11
