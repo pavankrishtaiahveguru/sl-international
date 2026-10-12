@@ -135,7 +135,7 @@ export default function Footer() {
 
             <div className="mt-7 space-y-5">
               {/* Phone */}
-              <a href="tel:+918725236116" className="group flex gap-3">
+              <a href="tel:+917702466534" className="group flex gap-3">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/10 text-[#16A9E8] transition-colors group-hover:bg-[#16A9E8] group-hover:text-white">
                   <FaPhoneAlt className="text-sm" />
                 </span>
@@ -144,7 +144,7 @@ export default function Footer() {
                   <span className="block text-xs text-slate-400">Call Us</span>
 
                   <span className="mt-1 block text-sm font-medium text-slate-200 group-hover:text-white">
-                    +91 87252 36116
+                    +91 77024 66534
                   </span>
                 </span>
               </a>
@@ -185,7 +185,7 @@ export default function Footer() {
 
               {/* WhatsApp */}
               <a
-                href="https://wa.me/918725236116"
+                href="https://wa.me/917702466534?text=Hello%20SL%20International,%20I%20would%20like%20to%20enquire%20about%20your%20overseas%20recruitment%20services."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex gap-3"

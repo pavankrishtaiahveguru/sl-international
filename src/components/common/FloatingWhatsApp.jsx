@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 
-const phoneNumber = "918725236116";
+const phoneNumber = "+917702466534";
 
 const whatsappMessage = encodeURIComponent(
   "Hello SL International, I would like to enquire about your overseas recruitment services.",

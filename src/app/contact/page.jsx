@@ -358,7 +358,7 @@ export default function ContactPage() {
               <div className="mt-8 space-y-4">
                 {/* Phone */}
                 <a
-                  href="tel:+918725236116"
+                  href="tel:+917702466534"
                   className="group flex gap-4 rounded-2xl border border-slate-200 bg-white p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-[0_15px_40px_rgba(18,71,184,0.08)]"
                 >
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#1247B8] transition-colors duration-300 group-hover:bg-[#1247B8] group-hover:text-white">
@@ -371,11 +371,7 @@ export default function ContactPage() {
                     </p>
 
                     <p className="mt-1 text-sm font-bold text-[#0F172A]">
-                      +91 08725 236116
-                    </p>
-
-                    <p className="mt-1 text-xs text-[#64748B]">
-                      +91 08725 236117
+                      +91 77024 66534
                     </p>
                   </div>
                 </a>
@@ -417,7 +413,7 @@ export default function ContactPage() {
 
                 {/* WhatsApp */}
                 <a
-                  href="https://wa.me/918725236116"
+                  href="https://wa.me/917702466534"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex gap-4 rounded-2xl border border-slate-200 bg-white p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-[0_15px_40px_rgba(18,71,184,0.08)]"
@@ -436,7 +432,7 @@ export default function ContactPage() {
                     </p>
 
                     <p className="mt-1 text-xs text-[#64748B]">
-                      +91 87252 36116
+                      +91 77024 66534
                     </p>
                   </div>
                 </a>
