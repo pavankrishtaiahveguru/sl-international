@@ -329,4 +329,3 @@ Details below are as shown publicly on the website itself:
 - **Branch office:** Door No. 3-3-2622/1, Lavanya Arcade, 2nd Floor, Opp. Chaitanya Public School, Gayatri Nagar, Kotagally, Nizamabad - 503001
 
 *Note: the +91 77024 66534 phone/WhatsApp number is used sitewide for calls, WhatsApp and floating button, while some CTA buttons (e.g. services/contact hero) link to a different number (`918725236116`). This inconsistency exists in the current codebase and is worth unifying.*
-<!--  -->
