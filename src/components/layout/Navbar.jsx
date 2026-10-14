@@ -78,7 +78,7 @@ export default function Navbar() {
           <Link
             href="/"
             aria-label="SL International Home"
-            className="relative z-50 md:left-18 flex min-w-0 shrink items-center gap-3"
+            className="relative z-50 md:left-28 flex min-w-0 shrink items-center gap-3"
           >
             {/* Logo */}
             <div
