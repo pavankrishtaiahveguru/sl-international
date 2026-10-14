@@ -55,44 +55,39 @@ const benefits = [
   },
 ];
 
+const inView = {
+  once: true,
+  amount: 0.2,
+};
+
 export default function CompanyIntro() {
   return (
     <section
       id="about"
       className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-24"
     >
-      {/* =========================================================
-          BACKGROUND DECORATION
-      ========================================================== */}
-
+      {/* BACKGROUND DECORATION */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full bg-[#16A9E8]/5 blur-3xl"
       />
-
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -right-40 bottom-10 h-96 w-96 rounded-full bg-[#1247B8]/5 blur-3xl"
       />
 
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-        {/* =======================================================
-            SECTION HEADER
-        ======================================================== */}
-
+      {/* Wider container: 1280px -> 1440px (xl) -> 1600px (2xl). Paragraphs keep their own max-widths. */}
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10 xl:max-w-[1440px] 2xl:max-w-[1600px]">
+        {/* SECTION HEADER */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{
-            once: true,
-            amount: 0.2,
-          }}
+          viewport={inView}
           className="mb-12 max-w-3xl"
         >
           <div className="mb-4 flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-[#16A9E8]" />
-
             <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#1247B8]">
               About SL International
             </span>
@@ -111,42 +106,27 @@ export default function CompanyIntro() {
           </p>
         </motion.div>
 
-        {/* =======================================================
-            MAIN CONTENT
-        ======================================================== */}
-
-        <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-          {/* =====================================================
-              LEFT — IMAGE
-          ====================================================== */}
-
+        {/* MAIN CONTENT: columns are now closer to equal so the image gets more presence */}
+        <div className="grid items-center gap-10 lg:grid-cols-[1fr_1fr] lg:gap-16 xl:gap-20">
+          {/* LEFT: IMAGE */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
-            viewport={{
-              once: true,
-              amount: 0.2,
-            }}
+            viewport={inView}
             className="relative"
           >
-            {/* Main Image */}
-
             <div className="relative overflow-hidden rounded-[2rem] bg-[#EAF4FF] p-2 sm:p-3">
               <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem]">
                 <Image
                   src="/images/home/about.png"
                   alt="SL International overseas manpower recruitment and professional support"
                   fill
-                  sizes="(max-width: 1024px) 100vw, 45vw"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover transition-transform duration-700 hover:scale-[1.03]"
                 />
 
-                {/* Image Gradient */}
-
                 <div className="absolute inset-0 bg-gradient-to-t from-[#071B49]/75 via-[#071B49]/10 to-transparent" />
-
-                {/* Image Content */}
 
                 <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-7">
                   <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#7DD3FC]">
@@ -162,10 +142,7 @@ export default function CompanyIntro() {
               </div>
             </div>
 
-            {/* =================================================
-                LICENSE INFORMATION
-            ================================================= */}
-
+            {/* LICENSE INFORMATION */}
             <div className="relative z-10 mx-4 -mt-6 rounded-2xl border border-[#E2E8F0] bg-white p-4 shadow-[0_15px_40px_rgba(7,27,73,0.10)] sm:mx-8 sm:p-5">
               <div className="flex items-center gap-3">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#1247B8]/10 text-[#1247B8]">
@@ -176,11 +153,9 @@ export default function CompanyIntro() {
                   <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-[#1247B8]">
                     Government Licensed & Registered
                   </p>
-
                   <p className="mt-1 text-xs font-semibold text-[#071B49]">
                     Ministry of Overseas Indian Affairs
                   </p>
-
                   <p className="mt-0.5 truncate text-[10px] text-[#64748B]">
                     Lic No. B-1066/TEL/PER/1000+/5/9420/2018
                   </p>
@@ -189,18 +164,12 @@ export default function CompanyIntro() {
             </div>
           </motion.div>
 
-          {/* =====================================================
-              RIGHT — CONTENT
-          ====================================================== */}
-
+          {/* RIGHT: CONTENT */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
-            viewport={{
-              once: true,
-              amount: 0.2,
-            }}
+            viewport={inView}
           >
             <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#16A9E8]">
               Our Approach
@@ -211,7 +180,7 @@ export default function CompanyIntro() {
               <span className="text-[#1247B8]">Right Opportunities</span>
             </h3>
 
-            <p className="mt-5 text-base leading-7 text-[#475569]">
+            <p className="mt-5 max-w-[40rem] text-base leading-7 text-[#475569]">
               SL International focuses on understanding the requirements of
               employers and the aspirations of candidates. Our approach is
               centered on identifying suitable talent across different skill
@@ -219,17 +188,14 @@ export default function CompanyIntro() {
               process.
             </p>
 
-            <p className="mt-4 text-base leading-7 text-[#475569]">
+            <p className="mt-4 max-w-[40rem] text-base leading-7 text-[#475569]">
               We support candidates through important stages of the overseas
               employment journey, helping them move forward with greater clarity
               and confidence from recruitment and documentation to travel
               preparation and post-departure guidance.
             </p>
 
-            {/* =================================================
-                SUPPORT POINTS
-            ================================================= */}
-
+            {/* SUPPORT POINTS */}
             <div className="mt-7 space-y-3">
               {supportPoints.map((item) => (
                 <div key={item} className="flex items-start gap-3">
@@ -244,10 +210,7 @@ export default function CompanyIntro() {
               ))}
             </div>
 
-            {/* =================================================
-                CTA
-            ================================================= */}
-
+            {/* CTA */}
             <div className="mt-8">
               <Link
                 href="/about"
@@ -263,19 +226,13 @@ export default function CompanyIntro() {
           </motion.div>
         </div>
 
-        {/* =======================================================
-            BENEFITS
-        ======================================================== */}
-
+        {/* BENEFITS */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{
-            once: true,
-            amount: 0.15,
-          }}
-          className="mt-16 grid gap-4 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3"
+          viewport={{ once: true, amount: 0.15 }}
+          className="mt-16 grid gap-4 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3 xl:gap-6"
         >
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon;
@@ -283,21 +240,10 @@ export default function CompanyIntro() {
             return (
               <motion.div
                 key={benefit.title}
-                initial={{
-                  opacity: 0,
-                  y: 20,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                viewport={{
-                  once: true,
-                }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.1,
-                }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="group rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#1247B8]/20 hover:bg-white hover:shadow-[0_15px_40px_rgba(7,27,73,0.07)] sm:p-6"
               >
                 <div className="flex items-start gap-4">
@@ -309,7 +255,6 @@ export default function CompanyIntro() {
                     <h4 className="text-base font-bold text-[#071B49] sm:text-lg">
                       {benefit.title}
                     </h4>
-
                     <p className="mt-1.5 text-sm leading-6 text-[#64748B]">
                       {benefit.description}
                     </p>

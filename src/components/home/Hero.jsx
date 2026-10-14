@@ -52,18 +52,18 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
-          className="scale-[1.04] object-cover object-[72%_center] sm:object-[68%_center] lg:object-[72%_center]"
+          className="object-cover object-[72%_center] sm:object-[68%_center] lg:object-[70%_center] min-[1920px]:object-[68%_center]"
         />
       </div>
 
-      {/* Desktop readability overlay */}
-      <div className="pointer-events-none absolute inset-0 -z-10 hidden bg-linear-to-r from-white/92 via-white/72 to-white/30 lg:block" />
+      {/* Desktop readability overlay: strong only behind the text, clear over the subjects */}
+      <div className="pointer-events-none absolute inset-0 -z-10 hidden bg-linear-to-r from-white/90 via-white/50 via-40% to-transparent lg:block" />
 
       {/* Mobile / Tablet readability overlay */}
       <div className="pointer-events-none absolute inset-0 -z-10 bg-linear-to-b from-white/96 via-white/70 to-white/20 lg:hidden" />
 
-      {/* Main Content */}
-      <div className="relative mx-auto flex min-h-[620px] w-full max-w-[1800px] items-center px-4 pb-12 pt-12 sm:min-h-[680px] sm:px-6 sm:pb-14 sm:pt-14 lg:min-h-[620px] lg:px-8 xl:min-h-[660px] xl:px-12">
+      {/* Main Content: same 1800px container as before (matches navbar), widens on ultrawide/4K */}
+      <div className="relative mx-auto flex min-h-[620px] w-full max-w-[1800px] items-center px-4 pb-12 pt-12 sm:min-h-[680px] sm:px-6 sm:pb-14 sm:pt-14 lg:min-h-[clamp(620px,34vw,900px)] lg:px-8 xl:px-12 2xl:px-16 min-[2200px]:max-w-[2400px] min-[2200px]:px-20">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -75,13 +75,13 @@ export default function Hero() {
               },
             },
           }}
-          className="relative z-10 w-full max-w-[620px] lg:max-w-[560px]"
+          className="relative z-10 w-full max-w-[620px] lg:max-w-[46rem] min-[2200px]:max-w-[62rem]"
         >
           {/* Company Name */}
           <motion.div variants={fadeUp} className="flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-[#16A9E8]" />
 
-            <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#1247B8] sm:text-xs">
+            <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#1247B8] sm:text-xs min-[1920px]:text-sm">
               SL International
             </span>
           </motion.div>
@@ -89,15 +89,15 @@ export default function Hero() {
           {/* Subtitle */}
           <motion.p
             variants={fadeUp}
-            className="mt-2 text-[10px] font-bold uppercase tracking-[0.14em] text-[#1247B8] sm:mt-3 sm:text-xs sm:tracking-[0.16em]"
+            className="mt-2 text-[10px] font-bold uppercase tracking-[0.14em] text-[#1247B8] sm:mt-3 sm:text-xs sm:tracking-[0.16em] min-[1920px]:text-sm"
           >
             Overseas Manpower Consultants
           </motion.p>
 
-          {/* Heading */}
+          {/* Heading: fluid size, two balanced lines on sm+ */}
           <motion.h1
             variants={fadeUp}
-            className="mt-5 text-[clamp(2.25rem,5vw,4.25rem)] font-extrabold leading-[0.98] tracking-[-0.04em] text-[#071B49] xl:text-[4.2rem]"
+            className="mt-5 text-[clamp(2.25rem,1.2rem+3vw,6rem)] font-extrabold leading-[1.02] tracking-[-0.04em] text-[#071B49]"
           >
             Your Trusted Partner
             <br className="hidden sm:block" /> in{" "}
@@ -107,7 +107,7 @@ export default function Hero() {
           {/* Description */}
           <motion.p
             variants={fadeUp}
-            className="mt-5 max-w-[540px] text-sm leading-6 text-[#475569] sm:text-[15px] sm:leading-7 lg:text-[15px]"
+            className="mt-5 max-w-[540px] text-sm leading-6 text-[#475569] sm:text-[15px] sm:leading-7 xl:max-w-[600px] xl:text-base xl:leading-8 min-[1920px]:max-w-[680px] min-[1920px]:text-lg min-[2200px]:max-w-[760px] min-[2200px]:text-xl"
           >
             Connecting the right talent with the right opportunities worldwide.
             Building careers and supporting professionals throughout their
@@ -122,7 +122,7 @@ export default function Hero() {
             {/* Enquire Now */}
             <Link
               href="/contact"
-              className="group inline-flex min-h-[50px] items-center justify-center gap-2 rounded-full bg-[#1247B8] px-4 text-xs font-bold text-white shadow-lg shadow-[#1247B8]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#092E78] active:scale-[0.98] sm:px-6 sm:text-sm"
+              className="group inline-flex min-h-[50px] items-center justify-center gap-2 rounded-full bg-[#1247B8] px-4 text-xs font-bold text-white shadow-lg shadow-[#1247B8]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#092E78] active:scale-[0.98] sm:px-6 sm:text-sm min-[1920px]:min-h-[56px] min-[1920px]:px-8 min-[1920px]:text-base"
             >
               Enquire Now
               <HiOutlineArrowRight className="text-base transition-transform duration-300 group-hover:translate-x-1 sm:text-lg" />
@@ -133,7 +133,7 @@ export default function Hero() {
               href="https://wa.me/918725236116"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-[50px] items-center justify-center gap-2 rounded-full border border-[#D8E1EC] bg-white/95 px-4 text-xs font-bold text-[#071B49] shadow-md backdrop-blur-sm transition-all duration-300 hover:border-[#25D366]/30 hover:bg-[#F0FFF5] active:scale-[0.98] sm:px-6 sm:text-sm"
+              className="inline-flex min-h-[50px] items-center justify-center gap-2 rounded-full border border-[#D8E1EC] bg-white/95 px-4 text-xs font-bold text-[#071B49] shadow-md backdrop-blur-sm transition-all duration-300 hover:border-[#25D366]/30 hover:bg-[#F0FFF5] active:scale-[0.98] sm:px-6 sm:text-sm min-[1920px]:min-h-[56px] min-[1920px]:px-8 min-[1920px]:text-base"
             >
               <FaWhatsapp className="text-base text-[#25D366] sm:text-lg" />
 
@@ -145,7 +145,7 @@ export default function Hero() {
           {/* Trust Points */}
           <motion.div
             variants={fadeUp}
-            className="mt-7 grid grid-cols-3 gap-2 border-t border-white/50 pt-4 sm:flex sm:items-center sm:gap-6 sm:border-0 sm:pt-0 lg:gap-6"
+            className="mt-7 grid grid-cols-3 gap-2 border-t border-white/50 pt-4 sm:flex sm:items-center sm:gap-6 sm:border-0 sm:pt-0 min-[1920px]:gap-8"
           >
             {trustPoints.map((item) => {
               const Icon = item.icon;
@@ -156,10 +156,10 @@ export default function Hero() {
                   className="flex flex-col items-center rounded-2xl border border-white/70 bg-[#F5F9FF]/75 px-2 py-2.5 text-center shadow-[0_8px_25px_rgba(7,27,73,0.08)] backdrop-blur-md sm:flex-row sm:items-center sm:gap-1.5 sm:rounded-none sm:border-0 sm:bg-transparent sm:px-0 sm:py-0 sm:shadow-none sm:backdrop-blur-none"
                 >
                   <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#1247B8]/10 text-[#1247B8] sm:h-auto sm:w-auto sm:rounded-none sm:bg-transparent">
-                    <Icon className="text-base" />
+                    <Icon className="text-base min-[1920px]:text-lg" />
                   </div>
 
-                  <span className="mt-2 text-[10px] font-semibold leading-4 text-[#0F172A] sm:mt-0 sm:text-[11px] sm:text-[#475569]">
+                  <span className="mt-2 text-[10px] font-semibold leading-4 text-[#0F172A] sm:mt-0 sm:text-[11px] sm:text-[#475569] xl:text-xs min-[1920px]:text-sm">
                     {item.text}
                   </span>
                 </div>
