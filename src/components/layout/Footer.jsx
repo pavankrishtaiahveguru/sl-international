@@ -290,21 +290,6 @@ export default function Footer() {
             . All rights reserved.
           </p>
 
-          <div className="flex items-center justify-center gap-5 text-xs text-slate-400">
-            <Link
-              href="/privacy-policy"
-              className="transition-colors hover:text-white"
-            >
-              Privacy Policy
-            </Link>
-
-            <span className="h-1 w-1 rounded-full bg-slate-600" />
-
-            <Link href="/terms" className="transition-colors hover:text-white">
-              Terms & Conditions
-            </Link>
-          </div>
-
           <DevelopedByStaffArc />
 
           {/* Back To Top */}
