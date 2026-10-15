@@ -57,40 +57,19 @@ export default function Navbar() {
           DESKTOP / MAIN NAVBAR
       ========================================================== */}
       <header
-        className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 ${
-          isScrolled
-            ? "border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur-md"
-            : "bg-white"
-        }`}
+        className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 ${isScrolled ? "border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur-md" : "bg-white"}`}
       >
-        <div
-          className="
-            mx-auto flex h-[78px] w-full max-w-[1800px] items-center gap-4
-            px-4
-            sm:px-6
-            lg:px-8
-            xl:px-12
-          "
-        >
+        <div className="mx-auto flex h-19.5 w-full max-w-[1800px] items-center gap-3 px-4 sm:gap-4 sm:px-6 lg:px-8 xl:gap-5 xl:px-12">
           {/* =====================================================
               BRAND / LOGO
           ====================================================== */}
           <Link
             href="/"
             aria-label="SL International Home"
-            className="relative z-50 md:left-28 flex min-w-0 shrink items-center gap-3"
+            className="relative z-50 left-3 md:left-20 flex w-fit min-w-max shrink-0 items-center gap-3"
           >
             {/* Logo */}
-            <div
-              className="
-                flex
-                h-[clamp(48px,15vw,56px)]
-                w-[clamp(48px,15vw,56px)]
-                shrink-0
-                items-center
-                justify-center
-              "
-            >
+            <div className="flex h-[clamp(48px,15vw,56px)] w-[clamp(48px,15vw,56px)] shrink-0 items-center justify-center">
               <Image
                 src="/images/logo/logo.png"
                 alt="SL International Logo"
@@ -105,49 +84,19 @@ export default function Navbar() {
             <div className="flex min-w-0 flex-col leading-none">
               {/* Company Name */}
               <div className="relative inline-block self-start">
-                <p
-                  className="
-                    whitespace-nowrap
-                    text-[clamp(13px,3.8vw,14px)]
-                    font-bold
-                    tracking-[0.08em]
-                    text-[#1247B8]
-                    sm:text-lg
-                    sm:tracking-[0.14em]
-                  "
-                >
+                <p className="whitespace-nowrap text-[clamp(13px,3.8vw,14px)] font-bold tracking-[0.08em] text-[#1247B8] sm:text-lg sm:tracking-[0.14em]">
                   SL INTERNATIONAL
                 </p>
 
                 {/* Company Name Underline */}
                 <span
                   aria-hidden="true"
-                  className="
-                    absolute
-                    -bottom-1
-                    left-0
-                    h-0.5
-                    w-full
-                    rounded-full
-                    bg-[#1247B8]
-                  "
+                  className="absolute -bottom-1 left-0 h-0.5 w-full rounded-full bg-[#1247B8]"
                 />
               </div>
 
               {/* Company Subtitle */}
-              <p
-                className="
-                  mt-2
-                  whitespace-nowrap
-                  text-[clamp(7px,2vw,8px)]
-                  font-semibold
-                  tracking-[0.12em]
-                  text-[#1247B8]
-                  sm:mt-2.5
-                  sm:text-[9px]
-                  sm:tracking-[0.16em]
-                "
-              >
+              <p className="mt-2 whitespace-nowrap text-[clamp(7px,2vw,8px)] font-semibold tracking-[0.12em] text-[#1247B8] sm:mt-2.5 sm:text-[9px] sm:tracking-[0.16em]">
                 OVERSEAS MANPOWER CONSULTANTS
               </p>
             </div>
@@ -156,7 +105,7 @@ export default function Navbar() {
           {/* =====================================================
               DESKTOP NAVIGATION
           ====================================================== */}
-          <nav className="hidden flex-1 items-center justify-center gap-1 lg:flex">
+          <nav className="hidden min-w-0 flex-1 items-center justify-center gap-0 xl:flex">
             {navLinks.map((link) => {
               const active = isActive(link.href);
 
@@ -164,21 +113,13 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`group relative px-4 py-2.5 text-[14px] font-semibold transition-colors duration-200 ${
-                    active
-                      ? "text-[#1247B8]"
-                      : "text-slate-600 hover:text-[#1247B8]"
-                  }`}
+                  className={`group relative whitespace-nowrap px-3 py-2.5 text-[14px] font-semibold transition-colors duration-200 ${active ? "text-[#1247B8]" : "text-slate-600 hover:text-[#1247B8]"}`}
                 >
                   {link.name}
 
                   {/* Active / Hover underline */}
                   <span
-                    className={`absolute bottom-0 left-4 right-4 h-[2px] origin-left rounded-full bg-[#1247B8] transition-transform duration-300 ${
-                      active
-                        ? "scale-x-100"
-                        : "scale-x-0 group-hover:scale-x-100"
-                    }`}
+                    className={`absolute bottom-0 left-3 right-3 h-0.5 origin-left rounded-full bg-[#1247B8] transition-transform duration-300 ${active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
                   />
                 </Link>
               );
@@ -188,42 +129,16 @@ export default function Navbar() {
           {/* =====================================================
               DESKTOP CTA
           ====================================================== */}
-          <div className="hidden shrink-0 lg:flex">
+          <div className="hidden shrink-0 xl:flex">
             <Link
               href="/contact"
-              className="
-                group
-                inline-flex
-                items-center
-                gap-2
-                rounded-full
-                bg-[#1247B8]
-                px-5
-                py-3
-                text-sm
-                font-semibold
-                text-white
-                shadow-md
-                shadow-blue-900/10
-                transition-all
-                duration-300
-                hover:bg-[#092E78]
-                hover:shadow-lg
-                hover:shadow-blue-900/20
-              "
+              className="group inline-flex items-center gap-2 rounded-full bg-[#1247B8] px-4 py-3 text-sm font-semibold text-white shadow-md shadow-blue-900/10 transition-all duration-300 hover:bg-[#092E78] hover:shadow-lg hover:shadow-blue-900/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1247B8]"
             >
               <HiOutlinePhone className="text-lg" />
 
               <span>Enquire Now</span>
 
-              <HiOutlineArrowRight
-                className="
-                  text-base
-                  transition-transform
-                  duration-300
-                  group-hover:translate-x-1
-                "
-              />
+              <HiOutlineArrowRight className="text-base transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
 
@@ -233,25 +148,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setIsOpen((prev) => !prev)}
-            className="
-              relative
-              z-50
-              ml-auto
-              flex
-              h-11
-              w-11
-              items-center
-              justify-center
-              rounded-xl
-              border
-              border-slate-200
-              text-slate-700
-              transition-all
-              hover:border-blue-200
-              hover:bg-blue-50
-              hover:text-[#1247B8]
-              lg:hidden
-            "
+            className="relative z-50 ml-auto flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-slate-200 text-slate-700 transition-all hover:border-blue-200 hover:bg-blue-50 hover:text-[#1247B8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1247B8] xl:hidden"
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
           >
@@ -268,11 +165,7 @@ export default function Navbar() {
           MOBILE MENU OVERLAY
       ========================================================== */}
       <div
-        className={`fixed inset-0 z-40 bg-slate-950/30 backdrop-blur-sm transition-all duration-300 lg:hidden ${
-          isOpen
-            ? "pointer-events-auto visible opacity-100"
-            : "pointer-events-none invisible opacity-0"
-        }`}
+        className={`fixed inset-0 z-40 bg-slate-950/30 backdrop-blur-sm transition-all duration-300 xl:hidden ${isOpen ? "pointer-events-auto visible opacity-100" : "pointer-events-none invisible opacity-0"}`}
         onClick={() => setIsOpen(false)}
         aria-hidden="true"
       />
@@ -281,9 +174,7 @@ export default function Navbar() {
           MOBILE MENU
       ========================================================== */}
       <div
-        className={`fixed top-0 right-0 z-40 h-dvh w-[88%] max-w-sm bg-white shadow-2xl transition-transform duration-300 ease-out lg:hidden ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-0 right-0 z-40 h-dvh w-[88%] max-w-sm bg-white shadow-2xl transition-transform duration-300 ease-out xl:hidden ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <div className="flex h-full flex-col px-6 pb-8 pt-24">
           {/* Mobile Navigation */}
@@ -296,11 +187,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`flex items-center justify-between border-b border-slate-100 py-4 text-base font-semibold transition-colors ${
-                    active
-                      ? "text-[#1247B8]"
-                      : "text-slate-700 hover:text-[#1247B8]"
-                  }`}
+                  className={`flex items-center justify-between border-b border-slate-100 py-4 text-base font-semibold transition-colors ${active ? "text-[#1247B8]" : "text-slate-700 hover:text-[#1247B8]"}`}
                 >
                   <span>{link.name}</span>
 
@@ -317,22 +204,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setIsOpen(false)}
-              className="
-                flex
-                w-full
-                items-center
-                justify-center
-                gap-2
-                rounded-xl
-                bg-[#1247B8]
-                px-5
-                py-3.5
-                text-sm
-                font-semibold
-                text-white
-                transition-colors
-                hover:bg-[#092E78]
-              "
+              className="flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#1247B8] px-5 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#092E78] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1247B8]"
             >
               <HiOutlinePhone className="text-lg" />
               Enquire Now
@@ -351,7 +223,7 @@ export default function Navbar() {
       {/* =========================================================
           NAVBAR SPACER
       ========================================================== */}
-      <div className="h-[78px]" />
+      <div className="h-19.5" />
     </>
   );
 }

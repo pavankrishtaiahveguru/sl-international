@@ -5,16 +5,16 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import {
   HiOutlineArrowRight,
-  HiOutlineCheckCircle,
   HiOutlineShieldCheck,
   HiOutlineGlobeAlt,
+  HiOutlineUserGroup,
 } from "react-icons/hi";
 import { FaWhatsapp } from "react-icons/fa";
 
 const trustPoints = [
   { icon: HiOutlineShieldCheck, text: "Licensed & Registered" },
   { icon: HiOutlineGlobeAlt, text: "Transparent Process" },
-  { icon: HiOutlineCheckCircle, text: "End-to-End Support" },
+  { icon: HiOutlineUserGroup, text: "End-to-End Support" },
 ];
 
 const fadeUp = {
@@ -30,11 +30,10 @@ export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="relative isolate w-full overflow-hidden bg-[#F7FBFF]">
-      {/* Responsive Background Images */}
-      {/* Responsive Background Images */}
+    <section className="relative isolate w-full overflow-hidden bg-[#EAF4FF]">
+      {/* ================= Background images ================= */}
       <div className="absolute inset-0 -z-20">
-        {/* Mobile */}
+        {/* Mobile background (tall image: globe + traveller + skyline) */}
         <div className="absolute inset-0 md:hidden">
           <Image
             src="/images/home/m-hero-bg.png"
@@ -43,27 +42,26 @@ export default function Hero() {
             priority
             sizes="(max-width: 767px) 100vw, 1px"
             quality={90}
-            className="object-cover object-top"
+            className="object-cover object-center"
           />
-          {/* readability overlay for text on mobile */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/50 to-white/10" />
         </div>
 
-        {/* Desktop */}
+        {/* Desktop background (wide image: globe + landmarks on the right) */}
         <div className="absolute inset-0 hidden md:block">
           <Image
             src="/images/home/hero-bg.png"
-            alt="Global overseas employment opportunities featuring Dubai, a professional traveler, and an airplane"
+            alt="Global overseas employment opportunities featuring world landmarks and a globe"
             fill
+            priority
             sizes="(min-width: 768px) 100vw, 1px"
             quality={90}
-            className="object-cover object-[70%_center] xl:object-[68%_center] min-[1920px]:object-[65%_center]"
+            className="object-cover object-[72%_center] xl:object-[70%_center] min-[1920px]:object-[68%_center]"
           />
         </div>
       </div>
 
-      {/* Responsive hero container */}
-      <div className="relative mx-auto flex min-h-[760px] w-full items-center px-5 pb-12 pt-12 sm:min-h-[720px] sm:px-8 md:min-h-[700px] md:px-10 lg:min-h-[min(760px,calc(100svh-78px))] lg:px-12 xl:min-h-[680px] xl:px-16 2xl:min-h-[720px] 2xl:px-20 min-[1920px]:min-h-[780px] min-[1920px]:px-24 min-[2560px]:min-h-[900px] min-[2560px]:px-[7vw] min-[3840px]:min-h-[1000px]">
+      {/* ================= Content ================= */}
+      <div className="relative mx-auto flex min-h-svh w-full max-w-[2200px] px-5 pb-7 pt-8 sm:min-h-svh sm:px-6 md:min-h-[600px] md:items-center md:py-14 lg:min-h-[640px] lg:px-14 xl:min-h-[680px] xl:px-20 min-[1920px]:min-h-[760px] min-[1920px]:px-28">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -73,89 +71,85 @@ export default function Hero() {
               transition: { staggerChildren: shouldReduceMotion ? 0 : 0.1 },
             },
           }}
-          className="relative z-10 w-full max-w-[600px] md:max-w-[650px] lg:max-w-[690px] xl:max-w-[720px] 2xl:max-w-[780px] min-[1920px]:max-w-[850px] min-[2560px]:max-w-[1000px] min-[3840px]:max-w-[1100px]"
+          className="relative z-10 flex w-full flex-col justify-start gap-7 md:block md:max-w-[560px] lg:max-w-[600px] xl:max-w-[640px] min-[1920px]:max-w-[760px]"
         >
-          {/* Brand label */}
-          <motion.div variants={fadeUp} className="flex items-center gap-2">
-            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#16A9E8]" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#1247B8] sm:text-xs lg:text-sm">
-              SL International
-            </span>
-          </motion.div>
+          {/* ---------- TOP: brand + headline + description ---------- */}
+          <div>
+            <motion.div variants={fadeUp} className="flex items-center gap-3">
+              <span className="h-[2px] w-8 shrink-0 bg-[#1D4ED8] md:w-7" />
+              <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#0F2A5C] sm:text-sm">
+                SL International
+              </span>
+            </motion.div>
 
-          <motion.p
-            variants={fadeUp}
-            className="mt-2 text-[10px] font-bold uppercase tracking-[0.12em] text-[#1247B8] sm:mt-3 sm:text-xs sm:tracking-[0.16em] lg:text-sm"
-          >
-            Overseas Manpower Consultants
-          </motion.p>
-
-          {/* Responsive headline */}
-          <motion.h1
-            variants={fadeUp}
-            className="mt-5 max-w-[620px] text-[clamp(2.35rem,1.55rem+3.2vw,5.75rem)] font-extrabold leading-[1.04] tracking-[-0.045em] text-[#071B49] sm:max-w-[680px] md:text-[clamp(3.1rem,2rem+3.1vw,5rem)] lg:max-w-[720px] xl:text-[clamp(3.5rem,2.3rem+2.4vw,5.25rem)] 2xl:max-w-[780px] min-[1920px]:max-w-[850px] min-[1920px]:text-[clamp(5rem,3.1vw,6.5rem)] min-[2560px]:max-w-[1000px] min-[2560px]:text-[clamp(6rem,3vw,7.5rem)] min-[3840px]:max-w-[1100px]"
-          >
-            Your Trusted Partner in{" "}
-            <span className="text-[#1247B8]">Global Opportunities</span>
-          </motion.h1>
-
-          {/* Supporting description */}
-          <motion.p
-            variants={fadeUp}
-            className="mt-5 max-w-[540px] text-sm leading-6 text-[#334155] sm:text-base sm:leading-7 lg:mt-6 lg:max-w-[590px] lg:text-[17px] lg:leading-8 min-[1920px]:max-w-[680px] min-[1920px]:text-lg min-[2560px]:max-w-[760px] min-[2560px]:text-xl min-[2560px]:leading-9"
-          >
-            Connecting the right talent with the right opportunities worldwide.
-            Building careers and supporting professionals throughout their
-            overseas employment journey.
-          </motion.p>
-
-          {/* Calls to action */}
-          <motion.div
-            variants={fadeUp}
-            className="mt-7 flex flex-wrap items-center gap-3 sm:gap-4 lg:mt-8"
-          >
-            <Link
-              href="/contact"
-              className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#1247B8] px-5 text-sm font-bold text-white shadow-lg shadow-[#1247B8]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#092E78] active:scale-[0.98] sm:px-6 lg:min-h-14 lg:px-7 min-[1920px]:text-base min-[2560px]:min-h-16 min-[2560px]:px-9"
+            <motion.h1
+              variants={fadeUp}
+              className="mt-3 text-[clamp(1.9rem,8.2vw,2.5rem)] font-extrabold leading-[1.05] tracking-[-0.03em] text-[#071B49] md:mt-6 md:text-[clamp(2.6rem,4.2vw,3.6rem)] xl:text-[clamp(3.2rem,3.6vw,4.2rem)] min-[1920px]:text-[clamp(4.2rem,3.4vw,5.5rem)]"
             >
-              Enquire Now
-              <HiOutlineArrowRight className="text-lg transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
+              <span className="block">Global Careers</span>
+              <span className="block text-[#1D4ED8]">Without Boundaries</span>
+            </motion.h1>
 
-            <a
-              href="https://wa.me/918725236116"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#D8E1EC] bg-white/95 px-5 text-sm font-bold text-[#071B49] shadow-md backdrop-blur-sm transition-all duration-300 hover:border-[#25D366]/40 hover:bg-[#F0FFF5] active:scale-[0.98] sm:px-6 lg:min-h-14 lg:px-7 min-[1920px]:text-base min-[2560px]:min-h-16 min-[2560px]:px-9"
+            <motion.p
+              variants={fadeUp}
+              className="mt-4 max-w-[330px] text-[15px] leading-6 text-[#1E293B] sm:max-w-[420px] sm:text-base sm:leading-7 md:mt-5 md:max-w-[480px] lg:text-[17px] min-[1920px]:max-w-[600px] min-[1920px]:text-xl min-[1920px]:leading-9"
             >
-              <FaWhatsapp className="text-lg text-[#25D366]" />
-              WhatsApp Us
-            </a>
-          </motion.div>
+              Connecting the right talent with the right opportunities
+              worldwide. Building careers and supporting professionals
+              throughout their overseas employment journey.
+            </motion.p>
+          </div>
 
-          {/* Trust indicators */}
-          <motion.div
-            variants={fadeUp}
-            className="mt-7 grid grid-cols-1 gap-2.5 min-[380px]:grid-cols-3 min-[380px]:gap-2 sm:mt-8 sm:flex sm:flex-wrap sm:items-center sm:gap-x-5 sm:gap-y-3 lg:gap-x-7 min-[1920px]:gap-x-8"
-          >
-            {trustPoints.map((item) => {
-              const Icon = item.icon;
+          {/* ---------- BOTTOM on mobile: CTAs + trust points ---------- */}
+          <div className="md:mt-0">
+            <motion.div
+              variants={fadeUp}
+              className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4 md:mt-8"
+            >
+              <Link
+                href="/contact"
+                className="group inline-flex min-h-[56px] items-center justify-center gap-2 rounded-full bg-[#1565E8] px-8 text-base font-semibold text-white shadow-lg shadow-[#1565E8]/25 transition-colors duration-300 hover:bg-[#0F4FC0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1565E8] sm:min-h-[52px] sm:min-w-[170px] min-[1920px]:min-h-[60px] min-[1920px]:text-lg"
+              >
+                Enquire Now
+                <HiOutlineArrowRight className="text-lg transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
 
-              return (
-                <div
-                  key={item.text}
-                  className="flex items-center gap-2 rounded-xl border border-white/70 bg-white/75 px-3 py-2 shadow-sm backdrop-blur-md min-[380px]:flex-col min-[380px]:items-center min-[380px]:gap-1 min-[380px]:px-2 min-[380px]:py-2 sm:flex-row sm:gap-1.5 sm:rounded-none sm:border-0 sm:bg-transparent sm:px-0 sm:py-0 sm:shadow-none sm:backdrop-blur-none"
-                >
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#1247B8]/10 text-[#1247B8] sm:h-auto sm:w-auto sm:rounded-none sm:bg-transparent">
-                    <Icon className="text-base lg:text-lg" />
-                  </span>
-                  <span className="text-xs font-semibold leading-4 text-[#334155] sm:text-[11px] lg:text-xs min-[1920px]:text-sm">
-                    {item.text}
-                  </span>
-                </div>
-              );
-            })}
-          </motion.div>
+              <a
+                href="https://wa.me/917702466534"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-[56px] items-center justify-center gap-2 rounded-full border border-[#E2E8F0] bg-white px-8 text-base font-bold text-[#071B49] shadow-md transition-colors duration-300 hover:border-[#25D366]/50 hover:bg-[#F0FFF5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366] sm:min-h-[52px] min-[1920px]:min-h-[60px] min-[1920px]:text-lg"
+              >
+                <FaWhatsapp className="text-2xl text-[#25D366]" />
+                WhatsApp Us
+              </a>
+            </motion.div>
+
+            {/* Individual glass trust cards */}
+            <motion.ul
+              variants={fadeUp}
+              className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-3 md:mt-9 md:gap-4 lg:gap-5"
+            >
+              {trustPoints.map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <li
+                    key={item.text}
+                    className="flex min-h-[76px] items-center gap-3 rounded-2xl border border-white/35 bg-white/30 px-4 py-3 shadow-[0_6px_24px_rgba(7,27,73,0.12)] backdrop-blur-4xl transition-all duration-300 hover:bg-white/30 sm:min-h-[84px] sm:gap-2.5 sm:px-3 md:gap-3 md:px-4 lg:min-h-[92px] lg:gap-4 lg:px-5"
+                  >
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/70 bg-white/35 text-[#1565E8] sm:h-9 sm:w-9 md:h-10 md:w-10 lg:h-12 lg:w-12">
+                      <Icon className="text-xl sm:text-lg md:text-xl lg:text-2xl" />
+                    </span>
+
+                    <span className="text-sm font-semibold leading-5 text-[#071B49] sm:text-xs md:text-sm lg:text-base">
+                      {item.text}
+                    </span>
+                  </li>
+                );
+              })}
+            </motion.ul>
+          </div>
         </motion.div>
       </div>
     </section>

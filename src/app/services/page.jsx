@@ -643,7 +643,7 @@ export default function ServicesPage() {
               </Link>
 
               <a
-                href="tel:+918725236116"
+                href="tel:+917702466534"
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               >
                 <Phone size={16} />
